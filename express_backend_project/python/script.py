@@ -228,3 +228,5 @@ km_percent = (save_km / total_distance ) * 100
 # ok this is the optimization statistics
 print(f"Total Distance safe: {save_km:.2f} km")
 print(f"Total Distance in percentage: {km_percent:.2f}%")
+
+sys.stdout.flush()
