@@ -2,7 +2,7 @@ const express = require("express");
 const { spawn } = require("child_process");
 
 const app = express();
-const PORT = 3001;
+const PORT = 3000;
 
 app.listen(PORT, (error) => {
   if (!error)
