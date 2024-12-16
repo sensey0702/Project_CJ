@@ -22,9 +22,8 @@ app.get("/data", (req, res) => {
   // collect data from script
   pythonProcess.stdout.on("data", function (data) {
     // dataToSend = data.toString();
-    dataToSend = JSON.parse(data);
-    console.log(data);
-    console.log(dataToSend);
+    // dataToSend = JSON.parse(data);
+    dataToSend = "hello World";
   });
 
   // close stream from child process
