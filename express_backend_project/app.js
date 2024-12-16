@@ -15,6 +15,35 @@ app.listen(PORT, (error) => {
   else console.log("Error occurred, server can't start", error);
 });
 
+const executePython = async (script, args) => {
+  const arguments = args.map((arg) => arg.toString());
+  const py = spawn("python3.10", [script, ...arguments]);
+  const result = await new Promise((resolve, reject) => {
+    let output;
+    py.stdout.on("data", (data) => {
+      output = JSON.parse(data);
+    });
+    py.stderr.on("data", (data) => {
+      console.error(`Error: ${data}`);
+      reject(`Error occured: ${data}`);
+    });
+    py.on("exit", (code) => {
+      console.log(`Process exited with code ${code}`);
+      resolve(output);
+    });
+  });
+  return result;
+};
+
+app.get("/", async (req, res) => {
+  try {
+    const result = await executePython("python/script.py");
+    res.json({ result: result });
+  } catch (error) {
+    res.status(500).json({ error: error });
+  }
+});
+
 app.get("/data", (req, res) => {
   let dataToSend;
 
