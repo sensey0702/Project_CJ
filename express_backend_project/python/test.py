@@ -1,7 +1,7 @@
 import sys
 import json
 
-print("Output from python")
+print(json.dumps({"result":"Hello World"}))
 
 # x =  '{ "name":"John", "age":30, "city":"New York"}'
 # y = json.loads(x)

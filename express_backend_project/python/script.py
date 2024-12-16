@@ -172,10 +172,10 @@ optimal_route_indices, total_distance = solve_tsp(distance_matrix)
 # If solution exists, map indices to city names
 if optimal_route_indices:
     optimal_route_tsp = [city_route.iloc[i]['city'] for i in optimal_route_indices]
-    print("Optimal Route TSP:", " -> ".join(optimal_route_tsp))
-    print(f"Total Distance: {total_distance:.2f} km")
-else:
-    print("No solution found.")
+    #print("Optimal Route TSP:", " -> ".join(optimal_route_tsp))
+    #print(f"Total Distance: {total_distance:.2f} km")
+#else:
+    #print("No solution found.")
 
 
 import itertools
@@ -216,17 +216,18 @@ optimal_route_iter, optimal_distance_iter = calc_all_routes(distance_matrix)
 
 # Convert route indices to city names for display
 optimal_route_iter = [city_route.iloc[i]['city'] for i in optimal_route_iter]
-print("Optimal Route itertools:", " -> ".join(optimal_route_iter))
-print(f"Total Distance: {optimal_distance_iter:.2f} km")
+#print("Optimal Route itertools:", " -> ".join(optimal_route_iter))
+#print(f"Total Distance: {optimal_distance_iter:.2f} km")
 
-print("Optimal Route Iter")
-print(optimal_route_iter)
+#print("Optimal Route Iter")
+#print(optimal_route_iter)
 
 save_km = total_distance - optimal_distance_iter
 km_percent = (save_km / total_distance ) * 100
 
 # ok this is the optimization statistics
-print(f"Total Distance safe: {save_km:.2f} km")
-print(f"Total Distance in percentage: {km_percent:.2f}%")
+#print(f"Total Distance safe: {save_km:.2f} km")
+#print(f"Total Distance in percentage: {km_percent:.2f}%")
 
+print(json.dumps({"result":optimal_route_iter}))
 sys.stdout.flush()
