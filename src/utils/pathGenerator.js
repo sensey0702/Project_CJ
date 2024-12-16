@@ -7,6 +7,11 @@ let graph = {};
 export function getPath() {
   createGraph(); // this function should only be run once on site load
 
+  fetch("http://18.119.28.180:3000/data")
+    .then((response) => response.json())
+    .then((data) => console.log)
+    .catch((error) => console.error);
+
   const res = tsp(graph);
   console.log(res);
   return eventCardDatas;
