@@ -6,9 +6,9 @@ let graph = {};
 // {address, lat, long}
 export function getPath() {
   createGraph(); // this function should only be run once on site load
-
+  // fetch("localhost:3000/=")
   // fetch("http://18.119.28.180:3000/")
-  fetch("localhost:3000/data")
+  fetch("http://18.119.28.180:3000/test")
     .then((response) => response.json())
     .then((data) => console.log(data))
     .catch((error) => console.error("Error: " + error));

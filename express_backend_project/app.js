@@ -44,6 +44,15 @@ app.get("/", async (req, res) => {
     res.status(500).json({ error: error });
   }
 });
+app.get("/test", async (req, res) => {
+  try {
+    const result = await executePython("python/test.py", []);
+    res.json({ result: result });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: error });
+  }
+});
 
 app.get("/data", (req, res) => {
   let dataToSend;
