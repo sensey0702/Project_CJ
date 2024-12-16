@@ -16,17 +16,18 @@ app.listen(PORT, (error) => {
 });
 
 app.get("/data", (req, res) => {
-  let dataToSend;
+  // let dataToSend;
 
-  const pythonProcess = spawn("python3.10", ["python/script.py"]);
-  // collect data from script
-  pythonProcess.stdout.on("data", function (data) {
-    dataToSend = data.toString();
-  });
+  // const pythonProcess = spawn("python3.10", ["python/script.py"]);
+  // // collect data from script
+  // pythonProcess.stdout.on("data", function (data) {
+  //   dataToSend = data.toString();
+  // });
 
-  // close stream from child process
-  pythonProcess.on("exit", (code) => {
-    console.log(`Data sent successfully`);
-    res.send(dataToSend);
-  });
+  // // close stream from child process
+  // pythonProcess.on("exit", (code) => {
+  //   console.log(`Data sent successfully`);
+  //   res.send(dataToSend);
+  // });
+  res.send("Hello World");
 });
