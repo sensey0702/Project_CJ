@@ -37,7 +37,7 @@ const executePython = async (script, args) => {
 
 app.get("/", async (req, res) => {
   try {
-    const result = await executePython("python/script.py");
+    const result = await executePython("python/test.py");
     res.json({ result: result });
   } catch (error) {
     res.status(500).json({ error: error });
