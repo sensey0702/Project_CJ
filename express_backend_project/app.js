@@ -29,7 +29,7 @@ app.get("/data", (req, res) => {
 
   // close stream from child process
   pythonProcess.on("exit", (code) => {
-    console.log(`Data sent successfully`);
+    console.log(`Data sent successfully ${code}`);
     res.send(dataToSend);
   });
   //res.send("Hello World");
