@@ -21,7 +21,8 @@ app.get("/data", (req, res) => {
   const pythonProcess = spawn("python3.10", ["python/script.py"]);
   // collect data from script
   pythonProcess.stdout.on("data", function (data) {
-    dataToSend = data.toString();
+    // dataToSend = data.toString();
+    dataToSend = JSON.parse(data);
     console.log(data);
     console.log(dataToSend);
   });
