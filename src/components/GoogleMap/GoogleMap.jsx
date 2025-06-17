@@ -15,12 +15,15 @@ function GoogleMap() {
     setOpenMarkerIndex(index);
   };
 
+  const APIkey = import.meta.env.VITE_GOOGLE_API_KEY;
+  const mapId = import.meta.env.VITE_MAP_ID;
+
   return (
-    <APIProvider apiKey={"AIzaSyBKsxB7SuZvOCJUCfWSsW9jkBRKtYBa0MY"}>
+    <APIProvider apiKey={APIkey}>
       <div className="google-map__wrapper">
         <div className="google-map__map">
           <Map
-            mapId={"89d3de76b192536f"}
+            mapId={mapId}
             defaultCenter={{ lat: 38.5, lng: -77 }}
             defaultZoom={5}
             gestureHandling={"greedy"}
