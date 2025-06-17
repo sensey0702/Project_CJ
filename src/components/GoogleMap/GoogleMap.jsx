@@ -20,8 +20,8 @@ function GoogleMap() {
 
   return (
     <APIProvider apiKey={APIkey}>
-      <div className="google-map__wrapper">
-        <div className="google-map__map">
+      <div className="googlemap">
+        <div className="googlemap__map">
           <Map
             mapId={mapId}
             defaultCenter={{ lat: 38.5, lng: -77 }}
