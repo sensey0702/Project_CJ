@@ -147,9 +147,9 @@ npm run dev
 
 **Email:** davidbedoya1000@gmail.com
 
-**Linkedin:** https://www.linkedin.com/in/dmbedoya/
+**Linkedin:** https://www.linkedin.com/in/davebedoya/
 
-**GitHub:** https://github.com/Daveyrax
+**GitHub:** https://github.com/davebedoya
 
 ### Sam Branham - Software Engineer
 
